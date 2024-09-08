@@ -1,0 +1,66 @@
+## This project provides details for the APIs required for a mobile ecommerce application
+
+APIs Required:
+Product APIs
+GET /products: Retrieve a list of all products
+GET /products/search?query={query}: Search products by keyword
+GET /products/categories: Get product categories
+GET /product/category/{category_id}: Get products by category
+POST /products: Create a new product
+PUT /products/{product_id}: Update an existing product
+DELETE /products/{product_id}: Delete a product
+
+Order APIs
+POST /orders: Create a new order
+GET /orders: Retrieve a list of all orders
+GET /orders/{order_id}: Retrieve a specific order by ID
+PUT /orders/{order_id}: Update an existing order (e.g., shipping address, billing information)
+PUT /orders/{order_id}/status: Update Order Status
+DELETE /orders/{order_id}: Delete an order
+GET /orders/history/{user_id}: Retrieve a list of the user's past orders.
+POST /orders/{order_id}/cancel: Cancel order
+
+Wishlist APIs
+POST /users/{user_id}/wishlist/add: Add product to wishlist
+DELETE /users/{user_id}/wishlist/items/{product_id}: Remove product from wishlist
+GET /users/{user_id}/wishlist/items: Get wishlist items
+
+Notification APIs
+GET /users/{user_id}/notifications: Get user notifications
+POST /notifications/{notification_id}/read: Mark notification as read
+
+Payment APIs
+POST /payments/process: Process a payment
+GET /payment-methods: Get avaiable payment methods
+POST /payment-methods: Create a new payment method using transfer, debit-card
+GET /payment-methods/save: Save payment method
+GET /payments/{payment_id}: Retrieve a specific payment by ID
+POST /payments/{payment_id}/refund: Refund a payment
+
+User APIs
+POST /users/register: Register a new user account
+POST /users/login: Login a user
+POST /users/logout: Logout a user
+GET /users/profile: User profile details
+GET /users/{user_id}: Retrieve a specific user account by ID
+PUT /users/{user_id}: Update an existing user account
+POST /users/reset-password?email={email}: Reset password
+DELETE /users/{user_id}: Delete a user account
+
+Cart Management APIs
+POST /carts/{user_id}/items: Add an item to the user's cart.
+DELETE /carts/{user_id}/items/{product_id}: Remove an item from the user's cart.
+GET /carts/{user_id}: Retrieve contents for a specific user
+PUT /carts/{user_id}/items/{product_id}: Update the quantity of an item in the user's cart.
+GET /carts/{user_id}/{product_id}: Remove item from cart
+PATCH /carts/{user_id}/{product_id}: Update cart item quantity
+
+Review and Rating APIs
+POST /products/{product_id}/reviews: Add product review
+GET /products/{product_id}/reviews: Get product reviews
+PUT /reviews/{review_id}: Update review
+DELETE /reviews/{review_id}: Delete review
+
+Authentication APIs
+POST /login: Login to the system
+POST /logout: Logout from the system
